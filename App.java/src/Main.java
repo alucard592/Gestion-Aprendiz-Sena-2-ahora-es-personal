@@ -42,9 +42,27 @@ public class Main {
         }
 
         // 5) Verificación final
-        // Agregamos un pequeño sleep o simplemente imprimimos después para asegurar el orden
         System.out.println("\nEstado final del primer registro:");
         System.out.println(userA.fichaTecnica());
+
+        // ==========================================================
+        // 6) AÑADIDO: PRUEBA DEL CARRITO DE COMPRAS
+        // ==========================================================
+        System.out.println("\n--- Iniciando Módulo de Carrito ---");
+        
+        // Creamos unos equipos para comprar
+        Equipo eq1 = new Equipo("DELL-01", "Laptop Latitude", "Computo");
+        Equipo eq2 = new Equipo("LOGI-09", "Mouse Pro", "Periféricos");
+        
+        CarritoServicio carrito = new CarritoServicio();
+        
+        // Agregamos productos al carrito
+        carrito.agregarProducto(eq1, 1);
+        carrito.agregarProducto(eq2, 3);
+        
+        // Mostramos el contenido
+        carrito.mostrarCarrito();
+        // ==========================================================
 
         System.out.println("\n--- Proceso Finalizado con Éxito ---");
     }
